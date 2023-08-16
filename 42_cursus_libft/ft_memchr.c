@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/16 11:30:30 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/16 12:26:33 by pkostura         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
+	c = (unsigned char)c;
+	while (n && *ptr != c)
+	{
+		++ptr;
+		--n;
+	}
+	if (n)
+		return ((void *)ptr);
+	else
+		return (NULL);
+}
