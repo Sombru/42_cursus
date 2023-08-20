@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 12:05:58 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/20 12:06:15 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/20 12:38:46 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/20 12:38:48 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	count;
+	char	*trimmed;
+	size_t	start;
+	size_t	end;
 
-	count = 0;
-	while (*str != '\0')
-	{
-		count++;
-		str++;
-	}
-	return (count);
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	end = ft_strlen(s1) - 1;
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		++start;
+	while (s1[end] && ft_strchr(set, s1[end]))
+		--end;
+	trimmed = ft_substr(s1, start, end - start + 1);
+	return (trimmed);
 }

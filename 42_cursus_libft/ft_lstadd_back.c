@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 12:05:58 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/20 12:06:15 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/20 12:58:09 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/20 12:58:11 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	count;
+	t_list	*tmp;
 
-	count = 0;
-	while (*str != '\0')
+	if (*lst == NULL)
 	{
-		count++;
-		str++;
+		*lst = new;
+		return ;
 	}
-	return (count);
+	tmp = *lst;
+	while (tmp -> next)
+		tmp = tmp -> next;
+	tmp -> next = new;
 }
