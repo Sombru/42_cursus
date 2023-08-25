@@ -6,7 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:30:28 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/16 11:30:29 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/25 12:04:40 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_isprint(int c)
+{
+	return (31 < c && c < 127);
+}

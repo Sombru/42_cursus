@@ -6,7 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:30:23 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/16 11:30:24 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/25 12:02:44 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_isascii(int c)
+{
+	return (0 <= c && c <= 127);
+}

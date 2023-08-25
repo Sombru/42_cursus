@@ -6,7 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:30:26 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/16 11:30:27 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/25 12:04:31 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_isdigit(int c)
+{
+	return ('0' <= c && c <= '9');
+}

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 13:13:30 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/25 12:02:20 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/25 12:07:49 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/25 12:09:34 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return ('A' <= c && c <= 'Z');
-}
+	char	*ptr;
 
-static int	ft_islower(int c)
-{
-	return ('a' <= c && c <= 'z');
-}
-
-int	ft_isalpha(int c)
-{
-	return (ft_isupper(c) || ft_islower(c));
+	ptr = NULL;
+	while (*s)
+	{
+		if (*s == (unsigned char)c)
+			ptr = (char *)s;
+		s++;
+	}
+	if (c == 0)
+		return ((char *)s);
+	return (ptr);
 }

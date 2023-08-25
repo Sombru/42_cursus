@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 13:13:30 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/25 12:02:20 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/25 11:40:34 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/25 11:40:59 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return ('A' <= c && c <= 'Z');
-}
-
-static int	ft_islower(int c)
-{
-	return ('a' <= c && c <= 'z');
-}
-
-int	ft_isalpha(int c)
-{
-	return (ft_isupper(c) || ft_islower(c));
+	while (lst)
+	{
+		(*f)(lst -> content);
+		lst = lst -> next;
+	}
 }

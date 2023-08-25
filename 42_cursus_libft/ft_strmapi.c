@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 13:13:30 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/25 12:02:20 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/25 12:10:08 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/25 12:10:12 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	return ('A' <= c && c <= 'Z');
-}
+	char	*new;
+	size_t	len;
+	size_t	i;
 
-static int	ft_islower(int c)
-{
-	return ('a' <= c && c <= 'z');
-}
-
-int	ft_isalpha(int c)
-{
-	return (ft_isupper(c) || ft_islower(c));
+	i = 0;
+	if (!s)
+		return (ft_strdup(""));
+	len = ft_strlen(s);
+	new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
+		return (NULL);
+	while (i < len)
+	{
+		new[i] = (*f)(i, s[i]);
+		++i;
+	}
+	new[i] = 0;
+	return (new);
 }

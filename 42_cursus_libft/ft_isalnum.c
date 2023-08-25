@@ -6,8 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:30:18 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/16 12:25:42 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/25 12:01:49 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
+
+int	ft_isalnum(int c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
+}

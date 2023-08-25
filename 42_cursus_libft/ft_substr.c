@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 13:13:30 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/25 12:02:20 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/25 12:06:59 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/25 12:07:02 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	return ('A' <= c && c <= 'Z');
-}
+	char	*subst;
+	size_t	size;
 
-static int	ft_islower(int c)
-{
-	return ('a' <= c && c <= 'z');
-}
-
-int	ft_isalpha(int c)
-{
-	return (ft_isupper(c) || ft_islower(c));
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	subst = (char *)malloc(sizeof(char) * (len + 1));
+	if (!subst)
+		return (NULL);
+	ft_strlcpy(subst, s + start, len + 1);
+	return (subst);
 }
