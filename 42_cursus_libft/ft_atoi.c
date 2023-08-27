@@ -6,13 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 12:39:27 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/16 12:25:01 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/27 13:49:04 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	res;
 	int	sign;

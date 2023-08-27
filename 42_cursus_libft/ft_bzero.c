@@ -6,11 +6,11 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 12:44:39 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/17 10:28:19 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/27 13:37:14 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:07:58 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/17 11:11:55 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/27 13:36:36 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memset(void *s, int c,  size_t n)
 	while (n--)
 	{
 		*ptr++ = (unsigned char) c;
-		return (s);
 	}
+	return (s);
 }
 
 // The  memset()  function  fills  the first n

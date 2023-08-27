@@ -6,13 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 11:51:25 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/20 12:10:56 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/08/27 13:46:22 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	unsigned int	length;
 
@@ -24,7 +24,7 @@ unsigned int	ft_strlen(const char *str)
 	return (length);
 }
 
-unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	dest_len;
 	unsigned int	total_len;

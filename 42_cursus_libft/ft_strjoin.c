@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 11:30:30 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/27 13:48:26 by pkostura         ###   ########.fr       */
+/*   Created: 2023/08/27 13:51:01 by pkostura          #+#    #+#             */
+/*   Updated: 2023/08/27 13:51:05 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char	*ptr;
+	char	*new;
+	size_t	len1;
+	size_t	len2;
 
-	ptr = (unsigned char *)s;
-	c = (unsigned char)c;
-	while (n && *ptr != c)
-	{
-		++ptr;
-		--n;
-	}
-	if (n)
-		return ((void *)ptr);
-	else
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	new = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!new)
 		return (NULL);
+	ft_strlcpy(new, s1, len1 + 1);
+	ft_strlcat(new, s2, len1 + len2 + 1);
+	return (new);
 }
-
-// function scans the initial n bytes of the memory area pointed 
-// to by s for the first instance of c.  Both c and the bytes
-// of the memory area pointed to by s are interpreted as unsigned char

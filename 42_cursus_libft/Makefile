@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
 RM = rm -rf
 
-all: $(NAME)
+all: $(NAME) 
 
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME).a $(OBJS)
