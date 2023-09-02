@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:41:26 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/25 11:41:31 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:56:32 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,5 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst -> next;
 	return (lst);
 }
+
+// Returns the last node of the list.

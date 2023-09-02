@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:38:23 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/25 11:38:25 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:58:11 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
+
+// Deletes and frees the given node and every
+// successor of that node, using the function ’del’
+// and free(3).
+// Finally, the pointer to the list must be set to
+// NULL.

@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:02:23 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/20 13:02:50 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:49:39 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,8 @@ t_list	*ft_lstnew(void *content)
 	new -> next = NULL;
 	return (new);
 }
+
+// Allocates (with malloc(3)) and returns a new node.
+// The member variable ’content’ is initialized with
+// the value of the parameter ’content’. The variable
+// ’next’ is initialized to NULL.
