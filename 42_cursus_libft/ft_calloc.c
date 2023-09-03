@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:30:15 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/17 10:26:34 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/03 18:42:01 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+	size_t	total_size;
 
-	ptr = malloc(nmemb * size);
-	if (ptr == 0)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	total_size = nmemb * size;
+	ptr = malloc (total_size);
+
+	if (ptr != NULL)
+	{
+		ft_memset(ptr, 0, total_size);
+	}
 	return (ptr);
 }
 

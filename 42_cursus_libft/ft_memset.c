@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:07:58 by pkostura          #+#    #+#             */
-/*   Updated: 2023/08/27 13:36:36 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/03 18:22:25 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c,  size_t n)
 {
-	unsigned char 	*ptr;
+	unsigned char	*ptr;
 
 	ptr = (unsigned char *) s;
 	while (n--)
