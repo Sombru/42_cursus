@@ -6,7 +6,7 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 12:58:09 by pkostura          #+#    #+#             */
-/*   Updated: 2023/09/02 13:56:45 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:34:39 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		tmp = tmp -> next;
 	tmp -> next = new;
 }
+
 // Adds the node ’new’ at the end of the list.

@@ -13,7 +13,6 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-ARFLAGS = -rcs
 RM = rm -rf
 
 all: $(NAME) 
@@ -21,15 +20,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME).a $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 bonus: $(OBJS) $(OBJS_BONUS)
 	ar $(ARFLAGS) $(NAME).a $(OBJS) $(OBJS_BONUS)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
-	gcc -nostartfiles -shared -o $(NAME).so $(OBJS) $(OBJS_BONUS)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
@@ -37,6 +29,4 @@ clean:
 fclean: clean
 	$(RM) $(NAME).a $(NAME).o
 
-re: fclean all
-
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean

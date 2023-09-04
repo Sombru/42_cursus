@@ -6,13 +6,13 @@
 /*   By: pkostura < pkostura@student.42prague.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:07:58 by pkostura          #+#    #+#             */
-/*   Updated: 2023/09/03 18:22:25 by pkostura         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:38:23 by pkostura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c,  size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
 
